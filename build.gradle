@@ -1,14 +1,14 @@
 plugins {
 	id 'maven-publish'
     id 'net.researchgate.release' version '2.8.1'
-    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'java'
 }
 
 apply plugin: 'idea'
 
 group = 'com.ag04.batchui'
-version = '0.1.0'
+version = '1.0.0'
 sourceCompatibility = '11'
 
 gradle.projectsEvaluated {
@@ -25,8 +25,6 @@ repositories {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.ag04.batchui'
-            artifactId = 'batchui-job-queue'
             from components.java
         }
     }
@@ -61,5 +59,5 @@ dependencies {
 }
 
 wrapper {
-    gradleVersion = "6.1"
+    gradleVersion = "5.4.1"
 }
