@@ -8,7 +8,6 @@ plugins {
 apply plugin: 'idea'
 
 group = 'com.ag04.batchui'
-version = '1.0.0'
 sourceCompatibility = '11'
 
 gradle.projectsEvaluated {
