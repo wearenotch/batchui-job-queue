@@ -25,6 +25,8 @@ repositories {
 publishing {
     publications {
         maven(MavenPublication) {
+            groupId = 'com.ag04.batchui'
+            artifactId = 'batchui-job-queue'
             from components.java
         }
     }
