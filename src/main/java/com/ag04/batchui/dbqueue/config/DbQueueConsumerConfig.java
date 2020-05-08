@@ -9,6 +9,7 @@ import com.ag04.batchui.dbqueue.retry.RetryPolicy;
 import com.ag04.batchui.dbqueue.service.JobManagementService;
 import com.ag04.batchui.dbqueue.service.StartJobCommandConsumer;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -17,7 +18,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.persistence.EntityManager;
 import java.time.Duration;
 
-@Profile("remoteContext")
+@ConditionalOnProperty(name = "batchui.dbqueue.consumer", havingValue = "enabled")
 @Configuration
 public class DbQueueConsumerConfig {
 

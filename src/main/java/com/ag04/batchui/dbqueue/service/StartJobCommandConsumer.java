@@ -21,7 +21,7 @@ import java.util.Optional;
 public class StartJobCommandConsumer implements QueueConsumerModule<Long> {
     private static final Logger log = LoggerFactory.getLogger(StartJobCommandConsumer.class);
 
-    private static final String SELECT_QUEUED_ITEMS = "select sjc.id from com.ag04.batchui.domain.StartJobCommand sjc where sjc.sendingState.nextAttemptTime < :currentTime order by sjc.sendingState.nextAttemptTime asc";
+    private static final String SELECT_QUEUED_ITEMS = "select sjc.id from com.ag04.batchui.dbqueue.domain.StartJobCommand sjc where sjc.sendingState.nextAttemptTime < :currentTime order by sjc.sendingState.nextAttemptTime asc";
 
     @Autowired
     private ApplicationContext ctx;
