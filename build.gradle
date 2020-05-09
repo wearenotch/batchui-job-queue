@@ -8,7 +8,8 @@ plugins {
 apply plugin: 'idea'
 
 group = 'com.ag04.batchui'
-sourceCompatibility = '11'
+sourceCompatibility='11'
+targetCompatibility='11'
 
 gradle.projectsEvaluated {
     tasks.withType(JavaCompile) {

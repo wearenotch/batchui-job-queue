@@ -1,7 +1,7 @@
 package com.ag04.batchui.dbqueue.service;
 
-import com.ag04.batchui.dbqueue.QueueConsumerModule;
-import com.ag04.batchui.dbqueue.QueueingState;
+import com.ag04.batchui.dbqueue.consumer.QueueConsumerModule;
+import com.ag04.batchui.dbqueue.domain.QueueingState;
 import com.ag04.batchui.dbqueue.domain.JobExecutionParamDto;
 import com.ag04.batchui.dbqueue.domain.StartJobCommand;
 import com.ag04.batchui.dbqueue.repository.StartJobCommandRepository;

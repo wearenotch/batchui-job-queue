@@ -1,4 +1,4 @@
-package com.ag04.batchui.dbqueue;
+package com.ag04.batchui.dbqueue.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -37,7 +37,7 @@ public class QueueingState {
         this.nextAttemptTime = Objects.requireNonNull(nextAttemptTime);
     }
 
-    void registerAttemptSuccess(LocalDateTime time) {
+    public void registerAttemptSuccess(LocalDateTime time) {
         this.attemptCount++;
         this.nextAttemptTime = null;
         this.lastAttemptTime = Objects.requireNonNull(time);
@@ -46,7 +46,7 @@ public class QueueingState {
         this.lastAttemptErrorMessage = null; // clear error if exists
     }
 
-    void registerAttemptFailure(LocalDateTime time, Throwable error) {
+    public void registerAttemptFailure(LocalDateTime time, Throwable error) {
         this.attemptCount++;
         this.nextAttemptTime = null;
         this.lastAttemptTime = Objects.requireNonNull(time);

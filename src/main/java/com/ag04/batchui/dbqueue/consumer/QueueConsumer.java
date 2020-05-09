@@ -1,5 +1,6 @@
-package com.ag04.batchui.dbqueue;
+package com.ag04.batchui.dbqueue.consumer;
 
+import com.ag04.batchui.dbqueue.domain.QueueingState;
 import com.ag04.batchui.dbqueue.retry.RetryPolicy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

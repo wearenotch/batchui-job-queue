@@ -1,4 +1,6 @@
-package com.ag04.batchui.dbqueue;
+package com.ag04.batchui.dbqueue.consumer;
+
+import com.ag04.batchui.dbqueue.domain.QueueingState;
 
 import java.time.LocalDateTime;
 import java.util.List;

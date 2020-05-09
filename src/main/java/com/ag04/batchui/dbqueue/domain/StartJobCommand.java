@@ -1,8 +1,5 @@
 package com.ag04.batchui.dbqueue.domain;
 
-import com.ag04.batchui.dbqueue.QueueStatus;
-import com.ag04.batchui.dbqueue.QueueingState;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;

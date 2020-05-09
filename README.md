@@ -12,16 +12,32 @@ are manually scheduled batch jobs and if finds some, starts their execution.
 
 ## 1. Usage
 For detailed instruction on how to use this libarary please see main **batch-ui** docs. 
-In practice using this library requires to simply add this jar to your project and possibly configuring it to suit your needs.
 
+To use this library in SpringBoot JPA configured application you need to:
+ 1) Add **batchui-job-queue-${version}.jar** to your project
+ 2) Add annotation **@EnableDbQueueProcessing** to you main Spring Boot class
+ 3) Add modified @EntityScan annotation to include your domain package(s) and batchui domain package (as displayed in the snippet bellow) 
+ 4) Possibly configuring it in application.properties or application.yml to better suit your needs.
+
+```Java
+@SpringBootApplication
+@EntityScan({"yourapp.domain.package", "com.ag04.batchui.dbqueue.domain"})
+@EnableDbQueueProcessing
+public class YourApp {
+...
+}
+```
 
 ### Configuration
+
 Library can be customized by configuring the following variables in the appropriate spring application.yml or application.properties file.
 
 ```
-batchui.dbqueue.poll-interval=30 # poll interval in seconds
- 
-```
+batchui.dbqueue.enable=true # this does not need to be defined, true is default value
+batchui.dbqueue.consumer.polling-interval=30 # poll interval in seconds
+batchui.dbqueue.consumer.polling-items-limit=100
+ ```
+
 ## 2. Development
 
 ### Requirements
@@ -47,7 +63,7 @@ And simply follow the instructions on the console
 
 ## 3. Changelog
 
-### v. 0.1.0 - Base implementation
+### v. 1.0.5 - First base implementation
 
 ## 4. Credits
 - Domagoj Madunić
