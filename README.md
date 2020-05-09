@@ -63,7 +63,7 @@ And simply follow the instructions on the console
 
 ## 3. Changelog
 
-### v. 1.0.5 - First base implementation
+### v. 1.0.3 - First base implementation
 
 ## 4. Credits
 - Domagoj Madunić

@@ -6,7 +6,7 @@ import com.ag04.batchui.dbqueue.repository.StartJobCommandRepository;
 import com.ag04.batchui.dbqueue.retry.FixedDelayRetryPolicy;
 import com.ag04.batchui.dbqueue.retry.LimitedRetryPolicy;
 import com.ag04.batchui.dbqueue.retry.RetryPolicy;
-import com.ag04.batchui.dbqueue.service.JobManagementService;
+import com.ag04.batchui.dbqueue.service.JobManagementServiceAsync;
 import com.ag04.batchui.dbqueue.service.StartJobCommandConsumer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
@@ -33,11 +33,11 @@ public class DbQueueConsumerConfig {
     public StartJobCommandConsumer startJobCommandConsumer(
             EntityManager entityManager,
             StartJobCommandRepository repository,
-            JobManagementService jobManagementService,
+            JobManagementServiceAsync jobManagementServiceAsync,
             ObjectMapper mapper
     ) {
         logger.info("--> Configuring StartJobCommandConsumer");
-        return new StartJobCommandConsumer(entityManager, repository, jobManagementService, mapper);
+        return new StartJobCommandConsumer(entityManager, repository, jobManagementServiceAsync, mapper);
     }
 
     @Bean

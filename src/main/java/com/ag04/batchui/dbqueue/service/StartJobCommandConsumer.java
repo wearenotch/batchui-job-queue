@@ -30,19 +30,19 @@ public class StartJobCommandConsumer implements QueueConsumerModule<Long> {
 
     private final StartJobCommandRepository repository;
 
-    private final JobManagementService jobManagementService;
+    private final JobManagementServiceAsync jobManagementServiceAsync;
 
     private final ObjectMapper mapper;
 
     public StartJobCommandConsumer(
             EntityManager entityManager,
             StartJobCommandRepository repository,
-            JobManagementService jobManagementService,
+            JobManagementServiceAsync jobManagementServiceAsync,
             ObjectMapper mapper
     ) {
         this.entityManager = entityManager;
         this.repository = repository;
-        this.jobManagementService = jobManagementService;
+        this.jobManagementServiceAsync = jobManagementServiceAsync;
         this.mapper = mapper;
     }
 
@@ -66,7 +66,7 @@ public class StartJobCommandConsumer implements QueueConsumerModule<Long> {
             StartJobCommand sjc = sjcOpt.get();
             try {
                 List<JobExecutionParamDto> paramsList = mapper.readValue(sjc.getJobParams(), new TypeReference<List<JobExecutionParamDto>>() { });
-                jobManagementService.startNewJobAsync(sjc.getJobName(), JobParamsUtil.convert(paramsList));
+                jobManagementServiceAsync.startNewJob(sjc.getJobName(), JobParamsUtil.convert(paramsList));
 
                 return Optional.of(sjc.getSendingState());
             } catch(Exception ex) {
