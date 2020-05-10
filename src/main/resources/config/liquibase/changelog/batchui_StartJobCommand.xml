@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity StartJobCommand.
+    -->
+    <changeSet id="20200506110900-1" author="jhipster">
+        <createTable tableName="start_job_command">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="job_name" type="varchar(80)">
+                <constraints nullable="false" />
+            </column>
+            <column name="job_params" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="next_attempt_time" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="attempt_count" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_attempt_time" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_attempt_error_message" type="varchar(500)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20200506110900-2" author="jhipster">
+        <createIndex tableName="start_job_command" indexName="idx_start_job_queue_polling_fields">
+            <column name="next_attempt_time"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>
