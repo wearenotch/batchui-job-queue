@@ -7,7 +7,8 @@ plugins {
 
 apply plugin: 'idea'
 
-group = 'com.ag04.batchui'
+project.group = 'com.ag04.batchui'
+project.name = 'batchui-job-queue'
 sourceCompatibility='11'
 targetCompatibility='11'
 
@@ -23,14 +24,6 @@ repositories {
 
 
 publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.ag04.batchui'
-            //artifactId = 'sample'
-            version= '1.0.5'
-            from(components["java"])
-        }
-    }
     repositories {
         if (project.hasProperty('github_username') && project.hasProperty('github_password')) {
             maven {
@@ -42,6 +35,11 @@ publishing {
                     password github_password
                 }
             }
+        }
+    }
+    publications {
+        mavenJava(MavenPublication) {
+            from(components.java)
         }
     }
 }
