@@ -54,7 +54,7 @@ batchui.dbqueue.consumer.polling-items-limit=100
 Make sure that file gradle.properties in the folder ${USER_HOME}/.gradle/ contains the following two variables defined
 
 - github_username
-- github_password : github token to be used to install packages
+- github_password : personal github token to be used to install packages
 
 1) Commit everything
 2) ./gradlew release
