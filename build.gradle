@@ -29,12 +29,14 @@ publishing {
         }
     }
     repositories {
-        if (project.hasProperty('ag04_nexus_username') && project.hasProperty('ag04_nexus_password')) {
+        if (project.hasProperty('github_username') && project.hasProperty('github_password')) {
             maven {
-                url 'https://nexus.ag04.io/repository/releases'
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/g04/batchui-job-queue")
+                //url 'https://nexus.ag04.io/repository/releases'
                 credentials {
-                    username ag04_nexus_username
-                    password ag04_nexus_password
+                    username github_username
+                    password github_password
                 }
             }
         }
