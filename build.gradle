@@ -8,6 +8,7 @@ plugins {
 apply plugin: 'idea'
 
 project.group = 'com.ag04.batchui'
+project.version = '1.0.5'
 
 sourceCompatibility='11'
 targetCompatibility='11'
