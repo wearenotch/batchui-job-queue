@@ -8,7 +8,6 @@ plugins {
 apply plugin: 'idea'
 
 group = 'com.ag04.batchui'
-version= '1.0.5'
 sourceCompatibility='11'
 targetCompatibility='11'
 
@@ -26,6 +25,9 @@ repositories {
 publishing {
     publications {
         maven(MavenPublication) {
+            groupId = 'com.ag04.batchui'
+            //artifactId = 'sample'
+            version= '1.0.5'
             from(components["java"])
         }
     }
