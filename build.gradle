@@ -29,7 +29,7 @@ publishing {
         if (project.hasProperty('github_username') && project.hasProperty('github_password')) {
             maven {
                 name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/g04/batchui-job-queue")
+                url = uri("https://maven.pkg.github.com/ag04/batchui-job-queue")
                 //url 'https://nexus.ag04.io/repository/releases'
                 credentials {
                     username github_username
