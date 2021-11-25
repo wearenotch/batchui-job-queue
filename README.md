@@ -4,7 +4,10 @@ Database based Job Queue for the **batch-ui** project.
 This project produces single jar that periodically checks if there
 are manually scheduled batch jobs and if finds some, starts their execution.
 
-**Table of contest**
+![](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white&style=flat)
+![](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white&style=flat)
+
+## Table of contest
 1. Usage
 2. Development
 3. Changelog
