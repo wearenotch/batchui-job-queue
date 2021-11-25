@@ -61,12 +61,12 @@ dependencyManagement {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-batch'
-    implementation 'javax.validation:validation-api'
+	implementation "org.springframework.boot:spring-boot-starter:${spring_boot_version}"
+	implementation "org.springframework.boot:spring-boot-starter-data-jpa:${spring_boot_version}"
+    implementation "org.springframework.boot:spring-boot-starter-batch:${spring_boot_version}"
+    implementation "javax.validation:validation-api:2.0.1.Final"
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation "org.springframework.boot:spring-boot-starter-test:${spring_boot_version}"
 }
 
 wrapper {
